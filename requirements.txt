@@ -1,0 +1,6 @@
+streamlit
+pycountry
+pymongo
+python-dotenv
+requests
+schedule
