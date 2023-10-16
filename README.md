@@ -7,6 +7,7 @@
 Quick Guide to Development Environment Setup
 
 First, Install all the requirements given in requirements.txt using pip
+
 Then make sure you have set the .env file according to the .env.example provided
 
 To Get the application running
