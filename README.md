@@ -3,6 +3,9 @@
 ## Dev Team Selections Task: News Forum
 [Problem Statement](https://docs.google.com/document/d/1n-UjATXVZLlBz4W7XAegPLwy9AGp9qjUZOLbLKha4aI/edit#heading=h.xt6cejjip8lm)
 
+## Demo
+https://github.com/IceCurrent/interiit-dev-task/assets/95679948/a18ad50a-06d1-4cbd-adc7-7112b39985cc
+
 ## Getting Started
 Quick Guide to Development Environment Setup
 
