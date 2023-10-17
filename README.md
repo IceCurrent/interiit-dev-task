@@ -34,6 +34,7 @@ For testing the application run
 ```
 docker-compose up --build
 ```
+The news app is available at localhost:8501
 
 ## Details Regarding the Implementation
 1. I fetched [NEWS API](https://newsapi.org/) to get the latest news
