@@ -4,12 +4,11 @@ from keywordSearch import searchKeywords
 from headlineSearch import headlines
 from emaildb import users
 
-
 st.set_page_config(page_title="Hooly News", page_icon="🔞", layout="wide")
 
 st.title("Hooly News")
 
-# Create a newsletter subscription section at the top-right
+# newsletter subscription section 
 st.sidebar.markdown("### Subscribe to our newsletter")
 email = st.sidebar.text_input("Enter your email")
 subscribeButton = st.sidebar.button("Subscribe")
@@ -25,6 +24,7 @@ if subscribeButton:
 
 main_tab = st.sidebar.selectbox("Select a section", ("Top Headlines", "Search for News"))
 
+## DISPLAYING THE NEWS
 def display_article(article):
     title = article.get("title")
     published_at = article.get("publishedAt")
@@ -36,7 +36,8 @@ def display_article(article):
     img = article.get("urlToImage")
 
     st.markdown("---")
-
+    if img:
+        st.image(img, use_column_width=True)
     if title:
         st.markdown(f"**{title}**")
     if published_at:
@@ -47,10 +48,11 @@ def display_article(article):
         st.markdown(f"Author: {author}")
     if content:
         st.markdown(content)
-    if reference:
-        st.write(reference)
-    if img:
-        st.image(img, use_column_width=True)
+    st.markdown(
+        f'<a href="{reference}" target="_blank">Read More <i class="fa fa-external-link-alt"></i></a>',
+        unsafe_allow_html=True,
+    ) 
+    
 
 
 if main_tab == "Top Headlines":
@@ -66,8 +68,26 @@ if main_tab == "Top Headlines":
     if not articles:
         st.error("Couldn't fetch top headlines.")
     else:
-        for article in articles:
-            display_article(article)
+        i = 0
+        coli1, coli2, coli3 = st.columns(3)
+        while i+2 < len(articles):
+                            
+            article1 = articles[i]
+
+            with coli1:
+                display_article(article1)
+
+            article2 = articles[i+1]
+
+            with coli2:
+                display_article(article2)
+
+            article3 = articles[i+2]
+
+            with coli3:
+                display_article(article3)
+
+            i+=3
 
 else:
     # Create a sub-tab for "Search" within the "Search for News" section
