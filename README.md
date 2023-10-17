@@ -30,7 +30,7 @@ Note:
 2. SMTP is blocked on institute wifi, so you need to have VPN enabled
 
 ## Using Docker
-For testing the application run
+For testing the application run (make sure to have .env setup)
 ```
 docker-compose up --build
 ```
