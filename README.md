@@ -44,6 +44,7 @@ The news app is available at localhost:8501
 
 ### Important Note
 1. The newsletter scheduling part has been commented out, because of limited API access from the provider
+2. Video Playback not implemented, because the api I used didn't provide video links
 
 
 
