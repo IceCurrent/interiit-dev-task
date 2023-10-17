@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  main-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.main
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+  newsletter-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.newsletter
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
